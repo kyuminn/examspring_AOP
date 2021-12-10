@@ -3,7 +3,7 @@ package aop08_around;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 
-@Aspect
+
 public class MyAspect {
 	
 	public void around(ProceedingJoinPoint jp) {

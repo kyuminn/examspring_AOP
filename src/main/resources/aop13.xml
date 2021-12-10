@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!--aop 적용 위해 필수로 들어가야 하는 설정, proxy pattern으로 객체 생성
+	 -->
+	<aop:aspectj-autoproxy/>
+	
+	<bean id="myAspect" class="aop13.MyAspect" />
+	<bean id="boy" class="aop13.Boy"/>
+	<bean id="girl" class="aop13.Girl"/>
+
+<!--  
+	<aop:config>
+		<aop:pointcut expression="execution(public void aop10.*.runSomething())" id="impl"/>
+		<aop:aspect ref="myAspect">
+			<aop:before method="before" pointcut-ref="impl"/>
+			<aop:after method="lockDoor" pointcut-ref="impl" />
+			<aop:around method="around" pointcut-ref="impl"/>
+			<aop:after-returning method="afterReturning" pointcut-ref="impl"/>
+			<aop:after-throwing method="afterException" pointcut-ref="impl"/>
+		</aop:aspect>
+	</aop:config>
+	-->
+</beans>
+
+	
