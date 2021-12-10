@@ -11,9 +11,11 @@ public class MyAspect {
 	// aop02 패키지의 모든 클래스의 , public void runSomethoing method에 대해! 라는 뜻
 	@Before("execution(public void aop02.*.runSomething()) ")
 	public void open(JoinPoint jp) {
-		//JoinPoint : 자르고 들어간 포인트에 대한 정보를 알 수 있음!
+		//JoinPoint : 자르고 들어간 포인트에 대한 정보를 알 수 있음! 여기서는 runSomething method를 말함
+		//Pointcut < JoinPoint. JoinPoint 가 더 넓은 개념
 		System.out.println(jp.getTarget());
 		System.out.println(jp.getSignature());
+		
 		//runSomething으로 넘어온 parameter 에 대한 처리
 		//지금은 매게변수 없으니 0으로 나옴
 		Object[] args = jp.getArgs();
